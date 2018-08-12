@@ -49,12 +49,10 @@ class TestPasswordCheck(unittest.TestCase):
 
     def test_with_invalid_input(self):
         """ Tests handling of invalid input/invalid passwords """
-        with self.assertRaises(TypeError) as context:
+        with self.assertRaises(TypeError):
             password_check(1)
             self.assertEqual(
-                'Argument should be a string',
-                context.exception.message,
-                'String inputs allowed only'
+                'Argument should be a string'
             )
 
 if __name__ == '__main__':

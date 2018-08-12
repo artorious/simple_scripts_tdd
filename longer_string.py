@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """ Find the longer string """
 
 def longer_string(string1, string2):
