@@ -1,7 +1,7 @@
 """ A simple program that checks validity of password input by user. """
+import string
 
-
-def password_check(*passwords):
+def password_check(passwords):
     """ Accepts a sequence of comma separated <passwords> and checks each 
         password for:
             + at least 1 letter between [a-z]
@@ -12,5 +12,5 @@ def password_check(*passwords):
             + maximum password least of 12 characters
         Prints out comma separated passwords that match the criteria. 
     """
-    pass        
+    pass
 
