@@ -11,7 +11,7 @@ class TestLongerString(unittest.TestCase):
         """ Tests both arguments are strings """
         with self.assertRaises(TypeError):
             longer_string('art', 1)
-        self.assertEqual('Expected  strings')
+            self.assertEqual('Expected  strings')
         
         with self.assertRaises(TypeError):
             longer_string(11, 1)
