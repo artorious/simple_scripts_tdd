@@ -31,13 +31,13 @@ class TestPasswordCheck(unittest.TestCase):
 
     def test_for_min_len(self):
         """ Test passwords for minimum length of 6 characters. """
-        self.assertEqual(password_check('Az09#, Az09@$'), 'Az09@$') 
+        self.assertEqual(password_check('Az09#,Az09@$'), 'Az09@$') 
         self.assertEqual(password_check('Az09#'), 'No valid password found') 
 
     def test_for_max_len(self):
         """ Test passwords for maximum length of 12 characters. """
         self.assertEqual(
-            password_check('Az09@$#xxxxx Az09@$#xxxxxyy'), 'Az09@$#xxxxx'
+            password_check('Az09@$#xxxxx,Az09@$#xxxxxyy'), 'Az09@$#xxxxx'
         ) 
         self.assertEqual(password_check('Az09@$#xxxxxyy'), 'No valid password found') 
 
