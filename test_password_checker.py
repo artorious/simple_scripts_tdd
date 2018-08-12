@@ -1,10 +1,11 @@
+#!/usr/bin/env python3
 """ Tests for password_checker.py """
 import unittest
 from password_checker import password_check
 
 
 class TestPasswordCheck(unittest.TestCase):
-    """ Test password_checker(*args) """
+    """ Test password_checker() """
 
     def test_with_valid_password(self):
         """ Tests function prints out only passwords that match criteria. """
@@ -55,5 +56,8 @@ class TestPasswordCheck(unittest.TestCase):
                 context.exception.message,
                 'String inputs allowed only'
             )
+
+if __name__ == '__main__':
+    unittest.main()
 
 
