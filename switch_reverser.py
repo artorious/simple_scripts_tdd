@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """ Swap the order of items in a collection of data """
 
+
 def switch_reverser(a_list):
     """ Swaps the order of items in the provided list
 
@@ -11,13 +12,13 @@ def switch_reverser(a_list):
     """
     if isinstance(a_list, (list, tuple, set)):
         a_list = list(a_list)
-         
-        if set([type(item) for item in a_list]) == {int}:
-            return a_list[::-1]
-        elif set([type(item) for item in a_list]) == {str}:
-            return [item.upper() for item in a_list]
-        else:
-            return a_list
 
+        if set([type(item) for item in a_list]) == {int}:
+            a_list = a_list[::-1]
+        elif set([type(item) for item in a_list]) == {str}:
+            a_list = [item.upper() for item in a_list]
+
+        return a_list
     else:
-        return 'Expected list, set, or tuple' 
+        return 'Expected list, set, or tuple'
+

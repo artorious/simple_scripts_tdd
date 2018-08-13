@@ -10,16 +10,16 @@ class TestSwitchReverser(unittest.TestCase):
 
     def test_with_list_of_integers(self):
         """ Test that a list of only integers is reversed. """
-        self.assertListEqual([5, 4, 3, 2, 1], switch_reverser([1, 2, 3, 4, 5])) 
-    
+        self.assertListEqual([5, 4, 3, 2, 1], switch_reverser([1, 2, 3, 4, 5]))
+
     def test_with_list_of_words_only(self):
         """ Test that a list of words only is converted to uppercase. """
         self.assertListEqual(
-            ['ABC', 'CDE', 'EFG'], 
+            ['ABC', 'CDE', 'EFG'],
             switch_reverser(['abc', 'cde', 'efg'])
         )
         self.assertListEqual(
-            ['1ABC', 'CDE', 'EFG'], 
+            ['1ABC', 'CDE', 'EFG'],
             switch_reverser(['1abc', 'cde', 'efg'])
         )
 
@@ -28,11 +28,10 @@ class TestSwitchReverser(unittest.TestCase):
         self.assertListEqual([5, 4, 3, 2, 1], switch_reverser((1, 2, 3, 4, 5)))
         self.assertListEqual([5, 4, 3, 2, 1], switch_reverser({1, 2, 3, 4, 5}))
 
-
     def test_with_mixed_datatypes(self):
         """ Test with a list items of different datatypes """
         self.assertListEqual(
-            ['abc', 'def', 1], 
+            ['abc', 'def', 1],
             switch_reverser(['abc', 'def', 1])
         )
         self.assertListEqual(
@@ -40,24 +39,21 @@ class TestSwitchReverser(unittest.TestCase):
             switch_reverser([1, 2, [3, 4], 5])
         )
 
-            
-
     def test_invalid_input(self):
         """ Test handling of strings, integers, floats, dicts """
-     
+
         self.assertEqual(
-            switch_reverser('abc'), 
+            switch_reverser('abc'),
             'Expected list, set, or tuple'
         )
         self.assertEqual(switch_reverser(1), 'Expected list, set, or tuple')
         self.assertEqual(
-            switch_reverser({'alpha':'abc'}), 
+            switch_reverser({'alpha': 'abc'}),
             'Expected list, set, or tuple'
         )
         self.assertEqual(switch_reverser(1.9), 'Expected list, set, or tuple')
 
 
-
-
 if __name__ == '__main__':
     unittest.main()
+

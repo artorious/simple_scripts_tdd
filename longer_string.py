@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """ Find the longer string """
 
+
 def longer_string(string1, string2):
     """ Accepts two strings as input
 
@@ -10,10 +11,13 @@ def longer_string(string1, string2):
     """
     if isinstance(string1, str) and isinstance(string2, str):
         if len(string1) == len(string2):
-            return '{0}\n{1}'.format(string1, string2)
+            output_str = '{0}\n{1}'.format(string1, string2)
         elif len(string1) > len(string2):
-            return '{}'.format(string1)
+            output_str = '{}'.format(string1)
         else:
-            return '{}'.format(string2)
+            output_str = '{}'.format(string2)
+
+        return output_str
     else:
         raise TypeError('Expected strings')
+

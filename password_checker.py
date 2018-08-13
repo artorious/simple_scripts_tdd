@@ -1,8 +1,9 @@
 """ A simple program that checks validity of password input by user. """
-import re  
+import re
+
 
 def password_check(passwords):
-    """ Accepts a sequence of comma separated <passwords> and checks each 
+    """ Accepts a sequence of comma separated <passwords> and checks each
         password for:
             + at least 1 letter between [a-z]
             + at least 1 number between [0-9]
@@ -10,7 +11,7 @@ def password_check(passwords):
             + at least 1 character from [$#@]
             + minimum password length of 6 characters
             + maximum password least of 12 characters
-        Prints out comma separated passwords that match the criteria. 
+        Prints out comma separated passwords that match the criteria.
     """
     if isinstance(passwords, str):
         raw_passwords_list = passwords.split(',')
@@ -28,16 +29,19 @@ def password_check(passwords):
                 elif not re.search(r'[0-9]', potential_password):
                     break
                 elif not re.search(r'[@#$]', potential_password):
-                   break
+                    break
                 else:
                     passwords_list.append(potential_password)
                     invalid_password = False
 
-
         if passwords_list == []:
-            return 'No valid password found'
+            output_passwords = 'No valid password found'
         else:
-            return ','.join(str(password) for password in passwords_list) 
+            output_passwords = ','.join(
+                str(password) for password in passwords_list
+            )
+
+        return output_passwords
     else:
-        raise TypeError('Argument should be a string') 
+        raise TypeError('Argument should be a string')
 

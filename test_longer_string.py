@@ -10,21 +10,24 @@ class TestLongerString(unittest.TestCase):
     def test_invalid_input(self):
         """ Tests both arguments are strings """
         self.assertRaises(
-            TypeError, longer_string, ('art', 1), msg='Expected  strings'
+            TypeError, longer_string, ('art', 1), 'Expected strings'
         )
-            
+
         self.assertRaises(
-            TypeError, longer_string, (11, 1), msg='Expected  strings'
+            TypeError, longer_string, (11, 1), 'Expected strings'
         )
-            
+
     def test_different_lengths(self):
         """ Test function prints the longer of the two strings provided """
         self.assertEqual(longer_string('art', 'arthur'), 'arthur')
+        self.assertEqual(longer_string('arthur', 'arthr'), 'arthur')
 
     def test_same_lengths(self):
         """ Test function prints both strings if they are of the same length
         """
         self.assertEqual(longer_string('arthur', 'ngondo'), 'arthur\nngondo')
 
+
 if __name__ == '__main__':
     unittest.main()
+

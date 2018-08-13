@@ -32,30 +32,33 @@ class TestPasswordCheck(unittest.TestCase):
 
     def test_for_min_len(self):
         """ Test passwords for minimum length of 6 characters. """
-        self.assertEqual(password_check('Az09#,Az09@$'), 'Az09@$') 
-        self.assertEqual(password_check('Az09#'), 'No valid password found') 
+        self.assertEqual(password_check('Az09#,Az09@$'), 'Az09@$')
+        self.assertEqual(password_check('Az09#'), 'No valid password found')
 
     def test_for_max_len(self):
         """ Test passwords for maximum length of 12 characters. """
         self.assertEqual(
             password_check('Az09@$#xxxxx,Az09@$#xxxxxyy'), 'Az09@$#xxxxx'
-        ) 
+        )
         self.assertEqual(
             password_check('Az09@$#xxxxxyy'), 'No valid password found'
-        ) 
+        )
 
     def test_for_an_accepteted_symbolic_char(self):
         """ Test for at least 1 accepted symbolic character from [$#@] """
         self.assertEqual(password_check('Az09*-^!,Az09@$#*^'), 'Az09@$#*^')
 
-
     def test_with_invalid_input(self):
         """ Tests handling of invalid input/invalid passwords """
         self.assertRaises(
-            TypeError, password_check, 1, msg='Argument should be a string' 
+            TypeError, password_check, 1, 'Argument should be a string'
         )
-   
+        self.assertEqual(
+            password_check('Az09InValid, AZ@#$inVALID'),
+            'No valid password found'
+        )
+
+
 if __name__ == '__main__':
     unittest.main()
-
 
