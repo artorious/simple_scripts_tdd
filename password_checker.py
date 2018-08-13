@@ -28,7 +28,7 @@ def password_check(passwords):
                 elif not re.search(r'[0-9]', potential_password):
                     break
                 elif not re.search(r'[@#$]', potential_password):
-                    break
+                   break
                 else:
                     passwords_list.append(potential_password)
                     invalid_password = False

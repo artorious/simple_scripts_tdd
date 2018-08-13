@@ -18,6 +18,10 @@ class TestSwitchReverser(unittest.TestCase):
             ['ABC', 'CDE', 'EFG'], 
             switch_reverser(['abc', 'cde', 'efg'])
         )
+        self.assertListEqual(
+            ['1ABC', 'CDE', 'EFG'], 
+            switch_reverser(['1abc', 'cde', 'efg'])
+        )
 
     def test_with_set_tuple(self):
         """ Test handling of sets and tuples """

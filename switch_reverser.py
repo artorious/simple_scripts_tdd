@@ -9,4 +9,15 @@ def switch_reverser(a_list):
         Returns the modified list. If provided list does not match the above
         criteria, the same is returned as it is.
     """
-    pass
+    if isinstance(a_list, (list, tuple, set)):
+        a_list = list(a_list)
+         
+        if set([type(item) for item in a_list]) == {int}:
+            return a_list[::-1]
+        elif set([type(item) for item in a_list]) == {str}:
+            return [item.upper() for item in a_list]
+        else:
+            return a_list
+
+    else:
+        return 'Expected list, set, or tuple' 
