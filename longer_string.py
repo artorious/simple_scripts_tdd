@@ -21,3 +21,9 @@ def longer_string(string1, string2):
     else:
         raise TypeError('Expected strings')
 
+
+if __name__ == '__main__':
+    string1 = input('Enter the first string: ')
+    string2 = input('Enter the second string to compare: ')
+    print(longer_string(string1, string2))
+

@@ -45,3 +45,9 @@ def password_check(passwords):
     else:
         raise TypeError('Argument should be a string')
 
+if __name__ == '__main__':
+    username = input('Enter username: ')
+    passwords = input('Enter comma-separted passwords to verify: ')
+    print('Username: ', username)
+    print('Provided passwoeds: ',password_check(passwords))
+
